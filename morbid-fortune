@@ -1,0 +1,2 @@
+#!/bin/bash
+awk -F',' '{ w=""; for(i=31;i<=NF;i++) { if(length($i) > 8){ w=w" "$i } } print w }' < wc-rail.txt | cut -b25- | sed 's/" "//g;s/"//g;/^$/d' | shuf -n1
